@@ -1,3 +1,9 @@
+/* 
+    Copyright 2018, Joshua Maglione.
+    Distributed under GNU GPLv3.
+*/
+
+
 __Semifields_2_4 :=
 [ PowerSequence(GF(2)) |
     \[ 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 
