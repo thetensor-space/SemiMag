@@ -11,7 +11,9 @@
 */
 __TwistedField := function(F, alpha, beta, j)
   p := Characteristic(F);
-  d := GCD(alpha, beta);
+  exp_a := Round(Log(p, alpha));
+  exp_b := Round(Log(p, beta));
+  d := GCD(exp_a, exp_b);
   e := Degree(F) div d;
   K, pi := sub< F | d >;
   V := VectorSpace(K, e);
@@ -29,10 +31,19 @@ __TwistedField := function(F, alpha, beta, j)
   return t;
 end function;
 
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                                  Intrinsics
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 intrinsic TwistedField( q::RngIntElt, alpha::RngIntElt, beta::RngIntElt, 
   j::RngIntElt ) -> AlgGen
 {Returns the twisted field of GF(q) with parameters alpha, beta, and j.}
   require q ge 2 : "Argument 1 must be at least 2.";
   require IsPrimePower(q) : "Argument 1 must be a prime power.";
+  p := Factorization(q)[1][1];
+  require IsPrimePower(alpha) and IsDivisibleBy(alpha, p) : 
+    "Argument 2 should be a prime power Galois automorphism.";
+  require IsPrimePower(beta) and IsDivisibleBy(beta, p) : 
+    "Argument 3 should be a prime power Galois automorphism.";
   return HeisenbergAlgebra(__TwistedField(GF(q), alpha, beta, j));
 end intrinsic;

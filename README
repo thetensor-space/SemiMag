@@ -27,7 +27,7 @@ GNU GPLv3.
   1. Spec file is "./SemiMag.spec"
   2. Source Code is contained in the folder "src"
   3. Examples are included in the folder "examples" (currently missing)
-  4. Documentation is included as "SemiMag.pdf" in "doc" (currently missing)
+  4. Documentation is included as "SemiMag.pdf" in "doc"
   5. Example files are demonstrated in "SemiMag.pdf" and their file names 
      coincide with their example title in the text. (currently missing)
   6. Performance and debugging tests are contained in the folder "tests" 
@@ -45,7 +45,7 @@ GNU GPLv3.
 
 ==== Latest Versions ===========================================================
 
-  Current version: 0.1.
+  Current version: 0.2.
   Latest versions can be downloaded on GitHub at:
     https://github.com/joshmaglione/SemiMag
 

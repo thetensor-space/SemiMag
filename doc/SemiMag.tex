@@ -1,0 +1,132 @@
+\documentclass{documentation}
+
+\title{SemiMag Package}
+
+\author{Joshua Maglione}
+\address{Kent State University}
+\email{jmaglion@math.kent.edu}
+
+\version{0.2}
+\date{\today}
+\copyrightyear{2018}
+
+\input{preamble.tex}
+
+%-----------------------------------------------------------------------------
+\begin{document}
+
+\frontmatter
+
+\dominitoc
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+\chapter{Introduction}
+
+This documentation describes constructions for semifields in Magma. 
+This package is built on top of the eMAGma Package developed by the author and James B.\ Wilson \cite{eMAGma}. 
+Magma's structure constants model for finite dimensional algebras is enoted \texttt{AlgGen}, which is the default category for our semifields. 
+Nevertheless, we return other categories as well: for example as tensors \texttt{TenSpcElt}, which facilitates the computation using multilinear algebra.
+We aim to stay with the current research and have all of the updated classifications included, and we also aim to have infinite families of semifields as well. 
+
+% More...
+
+\bigskip
+
+\section{Citing SemiMag} 
+To cite the SemiMag package, please use the following data.\\
+\\
+Joshua Maglione, \emph{SemiMag}, version 0.2, GitHub, 2018. \url{https://github.com/joshmaglione/SemiMag}. \\
+\\
+For AMSRefs:
+\begin{verbatim}
+\bib{eMAGma}{misc}{
+   author={Maglione, Joshua},
+   title={SemiMag},
+   publisher={GitHub},
+   year={2018},
+   edition={version 0.2},
+   note={\texttt{https://github.com/joshmaglione/SemiMag}},
+}
+\end{verbatim}
+
+\section{Version}
+
+We include an intrinsic to determine the version number attached in your current Magma run.
+
+\index{SemiMagVersion}
+\begin{intrinsics}
+SemiMagVersion() : -> MonStgElt
+\end{intrinsics}
+
+Returns the version number for the SemiMag package attached in Magma.
+
+\begin{example}[Version]
+We verify that we have attached the current version of the SemiMag package.
+Even though {\tt SemiMagVersion} has no arguments, {\tt ()} is still required.
+
+\begin{code}
+> SemiMagVersion();
+0.2
+\end{code}
+\end{example}
+
+\chapter{Infinite Families}
+
+
+
+
+\chapter{Tables}
+
+\backmatter
+
+
+
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{Albert:Fundamentals}{article}{
+   author={Albert, A. A.},
+   title={Non-associative algebras. I. Fundamental concepts and isotopy},
+   journal={Ann. of Math. (2)},
+   volume={43},
+   date={1942},
+   pages={685--707},
+   issn={0003-486X},
+   review={\MR{0007747}},
+}
+
+\bib{Magma}{article}{
+   author={Bosma, Wieb},
+   author={Cannon, John},
+   author={Playoust, Catherine},
+   title={The Magma algebra system. I. The user language},
+   note={Computational algebra and number theory (London, 1993)},
+   journal={J. Symbolic Comput.},
+   volume={24},
+   date={1997},
+   number={3-4},
+   pages={235--265},
+   issn={0747-7171},
+   review={\MR{1484478}},
+}
+
+\bib{eMAGma}{misc}{
+   author={Maglione, Joshua},
+   author={Wilson, James B.},
+   title={Experimental Multilinear Algebra Group},
+   publisher={GitHub},
+   year={2017},
+   edition={version 1.2.3},
+   note={Contributions from Peter A. Brooksbank,
+     \url{https://github.com/algeboy/eMAGma}},
+}
+\end{biblist}
+\end{bibdiv}
+
+\printindex
+
+
+\end{document}

@@ -47,15 +47,20 @@ __Interpreter := function(p, n, how)
   elif how eq "Tensors" then
     Cat := TensorCategory([1, 1, 1], {{0, 1, 2}});
     for s in SC do
-      Append(~L, Tensor(s, [n, n, n], Cat));
+      Append(~L, Tensor([n, n, n], s, Cat));
     end for;
   else // matrices
     for s in SC do
-      t := Tensor(s, [n, n, n], Cat);
+      t := Tensor([n, n, n], s);
       Append(~L, SystemOfForms(t));
     end for;
   end if;
+  return L;
 end function;
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                                  Intrinsics
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 intrinsic SemifieldsOfOrder( q::RngIntElt ) -> List
 {Returns the known database of proper semifields of order q, as algebras, up to 

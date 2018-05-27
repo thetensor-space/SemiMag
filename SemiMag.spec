@@ -3,6 +3,9 @@
   {
   AlbertsTwist.m
   Constructors.m
+  DicksonKnuth.m
+  GlobalVars.m
   SmallSemifields.m
+  Util.m
   }
 }
